@@ -31,9 +31,9 @@
 
 // #define MACOS
 
-// Uncomment the following line for advanced Linux layout tricks:
+// Uncomment the following line if using Linux:
 
-// #define LINUX
+#define LINUX
 
 
 /******************************************************************************
