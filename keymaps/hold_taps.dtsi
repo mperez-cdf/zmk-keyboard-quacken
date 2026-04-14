@@ -45,17 +45,17 @@
   #define H_K &hrm RGUI
   #define H_L &hrm LALT
 #else
-  #define H_S &hrm LGUI
+  #define H_S &hrm LSHIFT
   #define H_D &hrm LCTL
   #define H_F &hrm LALT
   #define H_J &hrm LALT
   #define H_K &hrm RCTL
-  #define H_L &hrm RGUI
+  #define H_L &hrm RSHIFT
 #endif
 
-#ifdef HRM_SHIFT
-  #define H_A    &hrm LSHIFT
-  #define H_SEMI &hrm RSHIFT
+#ifdef HRM_GUI
+  #define H_A    &hrm LGUI
+  #define H_SEMI &hrm RGUI
 #else
   #define H_A    &kp
   #define H_SEMI &kp
@@ -194,7 +194,7 @@
 &sl { ignore-modifiers; }; // keep one-shot-mods when chained into a one-shot-layer
 &sk { quick-release; };    // must-have! (lots of false positives otherwise)
 
-// add our common tap-hold parametesr to the default options
+// add our common tap-hold parameters to the default options
 &mt {
   tapping-term-ms = <SHORT_TAPPING_TERM>;
   quick-tap-ms = <QUICK_TAP>;

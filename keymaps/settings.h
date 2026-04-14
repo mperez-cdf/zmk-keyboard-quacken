@@ -84,10 +84,9 @@
 
 #define VIM_NAVIGATION
 
-// Uncomment the following line to enable shift as a pinky HRM.
-// Useful for combined shortcuts, but NOT MEANT to type text!
+// Uncomment the following line to enable gui as a pinky HRM.
 
-#define HRM_SHIFT
+#define HRM_GUI
 
 // Uncomment the following line to swap Space and Backspace.
 // Beware: this increases the typing load of the left thumb.

@@ -44,7 +44,7 @@ test)
 	echo "[optional_C++_flags] are defined in keymaps/quacken.keymap:"
 	echo "    - layout (qwerty by default): KB_LAYOUT_{ERGOL,AZERTY,QWERTY_LAFAYETTE...}"
 	echo "    - hold-taps (HRM by default): HT_{NONE,THUMB_TAPS,HOME_ROW_MODS}  "
-	echo "    - options: VIM_NAVIGATION, LEFT_HAND_SPACE, HRM_SHIFT, MACOS"
+	echo "    - options: VIM_NAVIGATION, LEFT_HAND_SPACE, HRM_GUI, MACOS"
 	echo
 	exit 1
 	;;
