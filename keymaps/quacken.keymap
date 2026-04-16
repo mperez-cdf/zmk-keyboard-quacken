@@ -94,10 +94,23 @@
     fn_media_layer: fn_media_layer {
       display-name = "FnMedia";
       bindings = <
-        &trans  &kp F1  &kp F2  &kp F3  &kp F4  &none         &none        &kp C_PREV  &kp C_VOL_UP  &kp C_BRI_UP   &kp SLCK      &trans
-        &trans  &kp F5  &kp F6  &kp F7  &kp F8  &none         &kp K_CMENU  H_J C_PP    H_K C_MUTE    H_L C_AL_LOCK  H_SEMI PSCRN  &trans
-        &trans  &kp F9  &kp F10 &kp F11 &kp F12 &none         &none        &kp C_NEXT  &kp C_VOL_DN  &kp C_BRI_DN   &kp INS       &trans
-                                &trans  &trans  &bootloader   &sys_reset  &trans  &studio_unlock
+        &trans  &kp F1  &kp F2  &kp F3  &kp F4  &to GAMING_LAYER    &none        &kp C_PREV  &kp C_VOL_UP  &kp C_BRI_UP   &kp SLCK      &trans
+        &trans  &kp F5  &kp F6  &kp F7  &kp F8  &none               &kp K_CMENU  H_J C_PP    H_K C_MUTE    H_L C_AL_LOCK  H_SEMI PSCRN  &trans
+        &trans  &kp F9  &kp F10 &kp F11 &kp F12 &none               &none        &kp C_NEXT  &kp C_VOL_DN  &kp C_BRI_DN   &kp INS       &trans
+                                &trans  &trans  &bootloader         &sys_reset  &trans  &studio_unlock
+      >;
+    };
+
+    // 7. Gaming layer -- keep the QWERTY key codes to use your OS keyboard layout
+    //               -- the Space Cadet layer-tap on the right can be replaced by an AltGr/Enter mod-tap
+    //               -- No homerow mods because GAMING
+    gaming_layer: gaming_layer{
+      display-name = "Gaming";
+      bindings = <
+        &kp TAB    &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y  &kp U  &kp I     &kp O   &kp P      &kp BACKSPACE
+        &kp ESCAPE &kp A  &kp S  &kp D  &kp F  &kp G        &kp H  &kp J  &kp K     HRM_L   &kp SEMI   &kp SQT
+        &kp LCTRL &kp Z  &kp X  &kp C  &kp V  &kp B        &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH   &to BASE_LAYER
+                LTHUMB_TUCK  LTHUMB_HOME  LTHUMB_REACH    RTHUMB_REACH  RTHUMB_HOME  RTHUMB_TUCK
       >;
     };
   };
