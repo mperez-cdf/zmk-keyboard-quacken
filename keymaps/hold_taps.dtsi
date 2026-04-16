@@ -55,9 +55,13 @@
 
 #ifdef HRM_GUI
   #define H_A    &hrm LGUI
+  #define H_G    &hrm LGUI
+  #define H_H    &hrm LGUI
   #define H_SEMI &hrm RGUI
 #else
   #define H_A    &kp
+  #define H_G    &kp
+  #define H_G    &kp
   #define H_SEMI &kp
 #endif
 
@@ -66,6 +70,8 @@
   #define HRM_S    H_S S
   #define HRM_D    H_D D
   #define HRM_F    H_F F
+  #define HRM_G    H_G G
+  #define HRM_H    H_H H
   #define HRM_J    H_J J
   #define HRM_K    H_K K
   #define HRM_L    H_L L
