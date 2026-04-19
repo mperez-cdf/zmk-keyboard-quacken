@@ -102,8 +102,8 @@
     };
 
     // 7. Gaming layer -- keep the QWERTY key codes to use your OS keyboard layout
-    //               -- the Space Cadet layer-tap on the right can be replaced by an AltGr/Enter mod-tap
     //               -- No homerow mods because GAMING
+    //               -- Thumb keys and columns changed.
     gaming_layer: gaming_layer{
       display-name = "Gaming";
       bindings = <
@@ -119,8 +119,8 @@
 
 
   // 8. Inverse Gaming Layer -- As above but mirror all letters in left hand to use one handedly.
-  gaming_layer: gaming_layer{
-      display-name = "Gaming";
+  inverse_gaming_layer: inverse_gaming_layer{
+      display-name = "Inverse Gaming";
       bindings = <
         &kp TAB    &kp R  &kp E  &kp L  &kp SEMI  &kp P            &kp P  &kp SEMI  &kp L        &kp E   &kp R      &kp BACKSPACE
         &kp LSHIFT &kp DOT  &kp H  &kp FSLH  &kp Y  &kp M        &kp M  &kp Y     &kp FSLH     &kp H   &kp DOT    &kp SQT
