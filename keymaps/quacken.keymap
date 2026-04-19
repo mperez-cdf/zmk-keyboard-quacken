@@ -113,19 +113,19 @@
         /* &kp TAB    &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y  &kp U  &kp I     &kp O   &kp P      &kp BACKSPACE */
         /* &kp ESCAPE &kp A  &kp S  &kp D  &kp F  &kp G        &kp H  &kp J  &kp K     &kp L   &kp SEMI   &kp SQT */
         /* &kp LCTRL &kp Z  &kp X  &kp C  &kp V  &kp B        &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH   &to BASE_LAYER */
-                &mo INVERSE_GAMING_LAYER  &kp SPACE   &kp ESCAPE    RTHUMB_REACH  LTHUMB_HOME  RTHUMB_TUCK
+                &mo INVERSED_GAMING_LAYER  &kp SPACE   &kp ESCAPE    RTHUMB_REACH  LTHUMB_HOME  RTHUMB_TUCK
       >;
     };
 
 
   // 8. Inverse Gaming Layer -- As above but mirror all letters in left hand to use one handedly.
   inverse_gaming_layer: inverse_gaming_layer{
-      display-name = "Inverse Gaming";
+      display-name = "Gaming";
       bindings = <
         &kp TAB    &kp R  &kp E  &kp L  &kp SEMI  &kp P            &kp P  &kp SEMI  &kp L        &kp E   &kp R      &kp BACKSPACE
         &kp LSHIFT &kp DOT  &kp H  &kp FSLH  &kp Y  &kp M        &kp M  &kp Y     &kp FSLH     &kp H   &kp DOT    &kp SQT
         &kp LCTRL  &kp FSLH  &kp N  &kp DOT  &kp U  &kp F            &kp F  &kp U     &kp DOT      &kp N   &kp FSLH   &to BASE_LAYER
-                &mo INVERSE_GAMING_LAYER  &kp SPACE   &kp ESCAPE    RTHUMB_REACH  LTHUMB_HOME  RTHUMB_TUCK
+                &none  &kp SPACE   &kp ESCAPE    RTHUMB_REACH  LTHUMB_HOME  RTHUMB_TUCK
       >;
     };
   };
