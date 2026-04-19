@@ -55,7 +55,7 @@
     vim_nav_layer: vim_nav_layer {
       display-name = "VimNav";
       bindings = <
-        &kp C_VOL_UP        &none    X_CTL_W  X_PREV   X_NEXT   &none        &kp HOME &kp PG_DN              &kp PG_UP              &kp END   &kp DEL    &kp C_BRI_UP
+        &kp C_VOL_UP        &none    X_CTL_W  &vim_prev &vim_next   &none        &kp HOME &kp PG_DN              &kp PG_UP              &kp END   &kp DEL    &kp C_BRI_UP
         &kp C_PLAY_PAUSE    X_ALL    X_SAVE   X_SHTAB  &kp TAB  &none        &kp LEFT &kp DOWN               &kp UP                 &kp RIGHT &none      &kp PSCRN
         &kp C_VOL_DN        X_UNDO   X_CUT    X_COPY   X_PASTE  X_REDO       &none    &kp C_AC_SCROLL_DOWN   &kp C_AC_SCROLL_UP     &none     &kp CAPS   &kp C_BRI_DN
           &trans  &lt FN_MEDIA_LAYER DEL  &mo NUM_ROW_LAYER            &trans  &mo FN_MEDIA_LAYER  &EZ_LSK(RALT)
@@ -68,9 +68,9 @@
     nav_num_layer: nav_num_layer {
       display-name = "NavNum";
       bindings = <
-        &kp C_VOL_UP        &kp ESC  &kp HOME &kp UP   &kp END   &kp PG_UP    &to NUM_LOCK_LAYER S_N7  S_N8  S_N9  S_FSLH  &kp C_BRI_UP
-        &kp C_PLAY_PAUSE    X_ALL    &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN    S_MINUS            S_N4  S_N5  S_N6  S_N0    &kp PSCRN
-        &kp C_VOL_DN        X_UNDO   X_CUT    X_COPY   X_PASTE   X_REDO       S_COMMA            S_N1  S_N2  S_N3  S_DOT   &kp C_BRI_DN
+        &trans  &kp ESC  &kp HOME &kp UP   &kp END   &kp PG_UP    &to NUM_LOCK_LAYER S_N7  S_N8  S_N9  S_FSLH  &trans
+        &trans  X_ALL    &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN    S_MINUS            S_N4  S_N5  S_N6  S_N0    &trans
+        &trans  X_UNDO   X_CUT    X_COPY   X_PASTE   X_REDO       S_COMMA            S_N1  S_N2  S_N3  S_DOT   &trans
                  &kp CAPS  &sc FN_MEDIA_LAYER DEL  &kp LS(TAB)    &kp ESCAPE  &lt FN_MEDIA_LAYER LS(SPACE)  &EZ_LSK(RALT)
       >;
     };
