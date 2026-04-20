@@ -8,6 +8,7 @@
 #include "aliases.h"      // symbols, actions, non-ASCII chars
 #include "mappings.dtsi"  // key mapping helpers and macros
 #include "hold_taps.dtsi" // thumb keys and homerow mods
+#include <dt-bindings/zmk/pointing.h> // Necessary for mouse stuff
 
 / {
   keymap {
@@ -55,9 +56,9 @@
     vim_nav_layer: vim_nav_layer {
       display-name = "VimNav";
       bindings = <
-        &kp C_VOL_UP        &none    &none  &vim_prev &vim_next   &none        &kp HOME &kp PG_DN              &kp PG_UP              &kp END   &kp DEL    &kp C_BRI_UP
-        &kp C_PLAY_PAUSE    X_ALL    X_SAVE   X_SHTAB  &kp TAB  &none        &kp LEFT &kp DOWN               &kp UP                 &kp RIGHT &none      &kp PSCRN
-        &kp C_VOL_DN        X_UNDO   X_CUT    X_COPY   X_PASTE  X_REDO       &none    &kp C_AC_SCROLL_DOWN   &kp C_AC_SCROLL_UP     &none     &kp CAPS   &kp C_BRI_DN
+        &kp C_VOL_UP        &kp CAPS    &none  &vim_prev &vim_next   &mkp RCLK        &kp HOME &kp PG_DN              &kp PG_UP              &kp END   &kp DEL    &kp C_BRI_UP
+        &kp C_PLAY_PAUSE    X_ALL    X_SAVE   X_SHTAB  &kp TAB  &mkp LCLK        &kp LEFT &kp DOWN               &kp UP                 &kp RIGHT &msc SCRL_UP      &kp PSCRN
+        &kp C_VOL_DN        X_UNDO   X_CUT    X_COPY   X_PASTE  X_REDO       &mmv MOVE_LEFT    &mmv MOVE_DOWN   &mmv MOVE_UP     &mmv MOVE_RIGHT     &msc SCRL_DOWN   &kp C_BRI_DN
           &trans  &lt FN_MEDIA_LAYER DEL  &mo NUM_ROW_LAYER            &trans  &mo FN_MEDIA_LAYER  &EZ_LSK(RALT)
       >;
     };
