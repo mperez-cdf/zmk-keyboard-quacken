@@ -27,85 +27,7 @@
       >;
     };
 
-    // 1. NumLock layer -- NavNum layer that stays on until deactivated without holding key
-    num_lock_layer: num_lock_layer {
-      display-name = "NumLock";
-      bindings = <
-        &trans  &kp ESC  &kp HOME &kp UP   &kp END   &kp PG_UP    &to BASE_LAYER S_N7  S_N8  S_N9  S_FSLH  &trans
-        &trans  S_EQUAL  &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN    S_MINUS        S_N4  S_N5  S_N6  S_N0    &trans
-        &trans  S_MONEY  S_COLON  S_STAR   S_PLUS    S_PRCNT      S_COMMA        S_N1  S_N2  S_N3  S_DOT   &trans
-                &trans  &sc NAV_NUM_LAYER BACKSPACE  &kp (TAB)    &trans  &lt NAV_NUM_LAYER LS(SPACE)  &EZ_SL(SYMBOLS_LAYER)
-      >;
-    };
-
-    // 2. Symbols layer -- with Ergo-L, basically just an AltGr layer with custom thumb keys
-    //                  -- can be redefined for non-AltGr layouts such as QWERTY-ANSI
-    symbols_layer: symbols_layer {
-      display-name = "Symbols";
-      bindings = <
-        &trans  S_CARET S_LT    S_GT    S_DLLR  S_PRCNT       S_AT    S_AMPS  S_STAR  S_SQT   S_GRAVE  &trans
-        &trans  S_LBRC  S_LPAR  S_RPAR  S_RBRC  S_EQUAL       S_BSLH  S_PLUS  S_MINUS S_FSLH  S_DQT    &trans
-        &trans  S_TILDE S_LBKT  S_RBKT  S_UNDER S_HASH        S_PIPE  S_EXCL  S_SEMI  S_COLON S_QMARK  &trans
-                    SYM_NUM_LAYER  &kp SPACE  &kp ENTER       &trans  &trans  &trans
-      >;
-    };
-
-    // 3. VimNav layer -- HJKL arrow cluster on the right hand
-    //                 -- best used along with the NumRow layer
-    //                 -- keyboard shortcuts on the left hand are adjusted to the OS layout (Ergo-L here)
-    vim_nav_layer: vim_nav_layer {
-      display-name = "VimNav";
-      bindings = <
-        &kp C_VOL_UP        &kp CAPS    &none  &vim_prev &vim_next   &mkp RCLK        &kp HOME &kp PG_DN              &kp PG_UP              &kp END   &kp DEL    &kp C_BRI_UP
-        &kp C_PLAY_PAUSE    X_ALL    X_SAVE   X_SHTAB  &kp TAB  &mkp LCLK        &kp LEFT &kp DOWN               &kp UP                 &kp RIGHT &msc SCRL_UP      &kp PSCRN
-        &kp C_VOL_DN        X_UNDO   X_CUT    X_COPY   X_PASTE  X_REDO       &mmv MOVE_LEFT    &mmv MOVE_DOWN   &mmv MOVE_UP     &mmv MOVE_RIGHT     &msc SCRL_DOWN   &kp C_BRI_DN
-          &trans  &lt FN_MEDIA_LAYER DEL  &mo NUM_ROW_LAYER            &trans  &mo FN_MEDIA_LAYER  &EZ_LSK(RALT)
-      >;
-    };
-
-    // 4. NavNum layer -- inverted T arrow cluster on the left hand, numpad on the right hand
-    //                 -- can be the only extra layer you need if you're not too picky with number+symbols n-grams
-    //                 -- keyboard shortcuts on the left hand are adjusted to the OS layout (Ergo-L here)
-    nav_num_layer: nav_num_layer {
-      display-name = "NavNum";
-      bindings = <
-        &trans  &kp ESC  &kp HOME &kp UP   &kp END   &kp PG_UP    &to NUM_LOCK_LAYER S_N7  S_N8  S_N9  S_FSLH  &trans
-        &trans  X_ALL    &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN    S_MINUS            S_N4  S_N5  S_N6  S_N0    &trans
-        &trans  X_UNDO   X_CUT    X_COPY   X_PASTE   X_REDO       S_COMMA            S_N1  S_N2  S_N3  S_DOT   &trans
-                 &kp CAPS  &sc FN_MEDIA_LAYER DEL  &kp LS(TAB)    &kp ESCAPE  &lt FN_MEDIA_LAYER LS(SPACE)  &EZ_LSK(RALT)
-      >;
-    };
-
-    // 5. NumRow layer -- bring the numbers to the homerow, keep shift+numbers for shortcuts and symbols
-    //                 -- space becomes shift+space, which is a no-break space with some OS layouts (e.g. Ergo-L)
-    //                 -- best used along with the VimNav layer
-    num_row_layer: num_row_layer {
-      display-name = "NumRow";
-      bindings = <
-        &trans  &kp RS(N1) &kp RS(N2) &kp RS(N3) &kp RS(N4) &kp RS(N5)       &kp LS(N6) &kp LS(N7) &kp LS(N8) &kp LS(N9) &kp LS(N0) &trans
-        &trans  &kp N1     &kp N2     &kp N3     &kp N4     &kp N5           &kp N6     &kp N7     &kp N8     &kp N9     &kp N0     &trans
-        &trans  &kp N6     &kp N7     &kp N8     &kp N9     &kp N0           S_MINUS    S_COMMA    S_DOT      S_COLON    S_FSLH     &trans
-                                      &trans  &kp RS(SPACE) &trans           &trans  &kp LS(SPACE) &kp RALT
-      >;
-    };
-
-    // 6. FnMedia layer -- F1..12 pad on the left hand, HRM on the right hand
-    //                  -- reset and bootloader reset on difficult thumb keys
-    //                  -- could be completed with other rare keys
-    //                  -- bootloader = reset the keyboard and put it into bootloader mode, allowing you to flash a new firmware
-    //                  -- sys_reset  = reset the keyboard and re-run the firmware flashed to the device
-    //                  -- studio_unlock = Unlock the quacken for modifications in ZMK Studio
-    fn_media_layer: fn_media_layer {
-      display-name = "FnMedia";
-      bindings = <
-        &trans  &kp F1  &kp F2  &kp F3  &kp F4  &to GAMING_LAYER    &none        &kp C_PREV  &kp C_VOL_UP  &kp C_BRI_UP   &kp SLCK      &trans
-        &trans  &kp F5  &kp F6  &kp F7  &kp F8  &none               &kp K_CMENU  H_J C_PP    H_K C_MUTE    H_L C_AL_LOCK  H_SEMI PSCRN  &trans
-        &trans  &kp F9  &kp F10 &kp F11 &kp F12 &none               &none        &kp C_NEXT  &kp C_VOL_DN  &kp C_BRI_DN   &kp INS       &trans
-                                &trans  &trans  &bootloader         &sys_reset  &trans  &studio_unlock
-      >;
-    };
-
-    // 7. Gaming layer -- keep the QWERTY key codes to use your OS keyboard layout
+    // 1. Gaming layer -- keep the QWERTY key codes to use your OS keyboard layout
     //               -- No homerow mods because GAMING
     //               -- Thumb keys and columns changed.
     gaming_layer: gaming_layer{
@@ -122,7 +44,7 @@
     };
 
 
-  // 8. Inverse Gaming Layer -- As above but mirror all letters in left hand to use one handedly.
+  // 2. Inverse Gaming Layer -- As above but mirror all letters in left hand to use one handedly.
   inverse_gaming_layer: inverse_gaming_layer{
       display-name = "Gaming";
       bindings = <
@@ -133,6 +55,84 @@
       >;
     };
   };
+    // 3. NumLock layer -- NavNum layer that stays on until deactivated without holding key
+    num_lock_layer: num_lock_layer {
+      display-name = "NumLock";
+      bindings = <
+        &trans  &kp ESC  &kp HOME &kp UP   &kp END   &kp PG_UP    &to BASE_LAYER S_N7  S_N8  S_N9  S_FSLH  &trans
+        &trans  S_EQUAL  &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN    S_MINUS        S_N4  S_N5  S_N6  S_N0    &trans
+        &trans  S_MONEY  S_COLON  S_STAR   S_PLUS    S_PRCNT      S_COMMA        S_N1  S_N2  S_N3  S_DOT   &trans
+                &trans  &sc NAV_NUM_LAYER BACKSPACE  &kp (TAB)    &trans  &lt NAV_NUM_LAYER LS(SPACE)  &EZ_SL(SYMBOLS_LAYER)
+      >;
+    };
+
+    // 4. Symbols layer -- with Ergo-L, basically just an AltGr layer with custom thumb keys
+    //                  -- can be redefined for non-AltGr layouts such as QWERTY-ANSI
+    symbols_layer: symbols_layer {
+      display-name = "Symbols";
+      bindings = <
+        &trans  S_CARET S_LT    S_GT    S_DLLR  S_PRCNT       S_AT    S_AMPS  S_STAR  S_SQT   S_GRAVE  &trans
+        &trans  S_LBRC  S_LPAR  S_RPAR  S_RBRC  S_EQUAL       S_BSLH  S_PLUS  S_MINUS S_FSLH  S_DQT    &trans
+        &trans  S_TILDE S_LBKT  S_RBKT  S_UNDER S_HASH        S_PIPE  S_EXCL  S_SEMI  S_COLON S_QMARK  &trans
+                    SYM_NUM_LAYER  &kp SPACE  &kp ENTER       &trans  &trans  &trans
+      >;
+    };
+
+    // 5. VimNav layer -- HJKL arrow cluster on the right hand
+    //                 -- best used along with the NumRow layer
+    //                 -- keyboard shortcuts on the left hand are adjusted to the OS layout (Ergo-L here)
+    vim_nav_layer: vim_nav_layer {
+      display-name = "VimNav";
+      bindings = <
+        &kp C_VOL_UP        &kp CAPS    &none  &vim_prev &vim_next   &mkp RCLK        &kp HOME &kp PG_DN              &kp PG_UP              &kp END   &kp DEL    &kp C_BRI_UP
+        &kp C_PLAY_PAUSE    X_ALL    X_SAVE   X_SHTAB  &kp TAB  &mkp LCLK        &kp LEFT &kp DOWN               &kp UP                 &kp RIGHT &msc SCRL_UP      &kp PSCRN
+        &kp C_VOL_DN        X_UNDO   X_CUT    X_COPY   X_PASTE  X_REDO       &mmv MOVE_LEFT    &mmv MOVE_DOWN   &mmv MOVE_UP     &mmv MOVE_RIGHT     &msc SCRL_DOWN   &kp C_BRI_DN
+          &trans  &lt FN_MEDIA_LAYER DEL  &mo NUM_ROW_LAYER            &trans  &mo FN_MEDIA_LAYER  &EZ_LSK(RALT)
+      >;
+    };
+
+    // 6. NavNum layer -- inverted T arrow cluster on the left hand, numpad on the right hand
+    //                 -- can be the only extra layer you need if you're not too picky with number+symbols n-grams
+    //                 -- keyboard shortcuts on the left hand are adjusted to the OS layout (Ergo-L here)
+    nav_num_layer: nav_num_layer {
+      display-name = "NavNum";
+      bindings = <
+        &trans  &kp ESC  &kp HOME &kp UP   &kp END   &kp PG_UP    &to NUM_LOCK_LAYER S_N7  S_N8  S_N9  S_FSLH  &trans
+        &trans  X_ALL    &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN    S_MINUS            S_N4  S_N5  S_N6  S_N0    &trans
+        &trans  X_UNDO   X_CUT    X_COPY   X_PASTE   X_REDO       S_COMMA            S_N1  S_N2  S_N3  S_DOT   &trans
+                 &kp CAPS  &sc FN_MEDIA_LAYER DEL  &kp LS(TAB)    &kp ESCAPE  &lt FN_MEDIA_LAYER LS(SPACE)  &EZ_LSK(RALT)
+      >;
+    };
+
+    // 7. NumRow layer -- bring the numbers to the homerow, keep shift+numbers for shortcuts and symbols
+    //                 -- space becomes shift+space, which is a no-break space with some OS layouts (e.g. Ergo-L)
+    //                 -- best used along with the VimNav layer
+    num_row_layer: num_row_layer {
+      display-name = "NumRow";
+      bindings = <
+        &trans  &kp RS(N1) &kp RS(N2) &kp RS(N3) &kp RS(N4) &kp RS(N5)       &kp LS(N6) &kp LS(N7) &kp LS(N8) &kp LS(N9) &kp LS(N0) &trans
+        &trans  &kp N1     &kp N2     &kp N3     &kp N4     &kp N5           &kp N6     &kp N7     &kp N8     &kp N9     &kp N0     &trans
+        &trans  &kp N6     &kp N7     &kp N8     &kp N9     &kp N0           S_MINUS    S_COMMA    S_DOT      S_COLON    S_FSLH     &trans
+                                      &trans  &kp RS(SPACE) &trans           &trans  &kp LS(SPACE) &kp RALT
+      >;
+    };
+
+    // 8. FnMedia layer -- F1..12 pad on the left hand, HRM on the right hand
+    //                  -- reset and bootloader reset on difficult thumb keys
+    //                  -- could be completed with other rare keys
+    //                  -- bootloader = reset the keyboard and put it into bootloader mode, allowing you to flash a new firmware
+    //                  -- sys_reset  = reset the keyboard and re-run the firmware flashed to the device
+    //                  -- studio_unlock = Unlock the quacken for modifications in ZMK Studio
+    fn_media_layer: fn_media_layer {
+      display-name = "FnMedia";
+      bindings = <
+        &trans  &kp F1  &kp F2  &kp F3  &kp F4  &to GAMING_LAYER    &none        &kp C_PREV  &kp C_VOL_UP  &kp C_BRI_UP   &kp SLCK      &trans
+        &trans  &kp F5  &kp F6  &kp F7  &kp F8  &none               &kp K_CMENU  H_J C_PP    H_K C_MUTE    H_L C_AL_LOCK  H_SEMI PSCRN  &trans
+        &trans  &kp F9  &kp F10 &kp F11 &kp F12 &none               &none        &kp C_NEXT  &kp C_VOL_DN  &kp C_BRI_DN   &kp INS       &trans
+                                &trans  &trans  &bootloader         &sys_reset  &trans  &studio_unlock
+      >;
+    };
+
 };
 
 // Emulated layouts (experimental!)

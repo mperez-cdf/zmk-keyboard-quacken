@@ -10,15 +10,17 @@
 // Human-readable constants for the layer indexes.
 // Make sure to update this table if you edit the order / number of layers in the keymap.
 #define BASE_LAYER     0
-#define NUM_LOCK_LAYER 1
-#define SYMBOLS_LAYER  2
-#define VIM_NAV_LAYER  3
-#define NAV_NUM_LAYER  4
-#define NUM_ROW_LAYER  5
-#define FN_MEDIA_LAYER 6
 
-#define GAMING_LAYER 7
-#define INVERSED_GAMING_LAYER 8
+#define GAMING_LAYER 1
+#define INVERSED_GAMING_LAYER 2
+
+#define NUM_LOCK_LAYER 3
+#define SYMBOLS_LAYER  4
+#define VIM_NAV_LAYER  5
+#define NAV_NUM_LAYER  6
+#define NUM_ROW_LAYER  7
+#define FN_MEDIA_LAYER 8
+
 // Potentially used by other keymaps deriving from this one, who may add extra layers.
 // Make sure this stays equal to <index_of_last_layer> + 1
 #define EXTRA_LAYERS_START_INDEX 9
