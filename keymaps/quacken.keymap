@@ -132,7 +132,7 @@
                                 &trans  &trans  &bootloader         &sys_reset  &trans  &studio_unlock
       >;
     };
-
+  };
 };
 
 // Emulated layouts (experimental!)
