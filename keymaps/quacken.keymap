@@ -84,7 +84,7 @@
       bindings = <
         &trans  &kp RS(N1) &kp RS(N2) &kp RS(N3) &kp RS(N4) &kp RS(N5)       &kp LS(N6) &kp LS(N7) &kp LS(N8) &kp LS(N9) &kp LS(N0) &trans
         &trans  &kp N1     &kp N2     &kp N3     &kp N4     &kp N5           &kp N6     &kp N7     &kp N8     &kp N9     &kp N0     &trans
-        &trans  &none      &none      &none      &none      &none            S_MINUS    S_COMMA    S_DOT      S_COLON    S_FSLH     &trans
+        &trans  &kp N6     &kp N7     &kp N8     &kp N9     &kp N0           S_MINUS    S_COMMA    S_DOT      S_COLON    S_FSLH     &trans
                                       &trans  &kp RS(SPACE) &trans           &trans  &kp LS(SPACE) &kp RALT
       >;
     };
@@ -92,6 +92,9 @@
     // 6. FnMedia layer -- F1..12 pad on the left hand, HRM on the right hand
     //                  -- reset and bootloader reset on difficult thumb keys
     //                  -- could be completed with other rare keys
+    //                  -- bootloader = reset the keyboard and put it into bootloader mode, allowing you to flash a new firmware
+    //                  -- sys_reset  = reset the keyboard and re-run the firmware flashed to the device
+    //                  -- studio_unlock = Unlock the quacken for modifications in ZMK Studio
     fn_media_layer: fn_media_layer {
       display-name = "FnMedia";
       bindings = <
@@ -114,7 +117,7 @@
         /* &kp TAB    &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y  &kp U  &kp I     &kp O   &kp P      &kp BACKSPACE */
         /* &kp ESCAPE &kp A  &kp S  &kp D  &kp F  &kp G        &kp H  &kp J  &kp K     &kp L   &kp SEMI   &kp SQT */
         /* &kp LCTRL &kp Z  &kp X  &kp C  &kp V  &kp B        &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH   &to BASE_LAYER */
-                &mo INVERSED_GAMING_LAYER  &kp SPACE   &kp ESCAPE    RTHUMB_REACH  LTHUMB_HOME  RTHUMB_TUCK
+          &kp SPACE LTHUMB_REACH &mo INVERSED_GAMING_LAYER         RTHUMB_REACH  LTHUMB_HOME  RTHUMB_TUCK
       >;
     };
 
@@ -123,10 +126,10 @@
   inverse_gaming_layer: inverse_gaming_layer{
       display-name = "Gaming";
       bindings = <
-        &kp TAB    &kp R  &kp E  &kp L  &kp SEMI  &kp P            &kp P  &kp SEMI  &kp L        &kp E   &kp R      &kp BACKSPACE
-        &kp LSHIFT &kp DOT  &kp H  &kp FSLH  &kp Y  &kp M        &kp M  &kp Y     &kp FSLH     &kp H   &kp DOT    &kp SQT
-        &kp LCTRL  &kp FSLH  &kp N  &kp DOT  &kp U  &kp F            &kp F  &kp U     &kp DOT      &kp N   &kp FSLH   &to BASE_LAYER
-                &none  &kp SPACE   &kp ESCAPE    RTHUMB_REACH  LTHUMB_HOME  RTHUMB_TUCK
+        &kp TAB    &kp R    &kp E  &kp L    &kp SEMI  &kp P           &kp P  &mkp LCLK        &mmv MOVE_UP      &mkp RCLK       &msc SCRL_UP    &kp BACKSPACE
+        &kp LSHIFT &kp DOT  &kp H  &kp FSLH &kp Y     &kp M           &kp M  &mmv MOVE_LEFT   &mmv MOVE_DOWN    &mmv MOVE_RIGHT &msc SCRL_DOWN  &kp SQT
+        &kp LCTRL  &kp FSLH &kp N  &kp DOT  &kp U     &kp F           &kp F  &kp U            &kp DOT           &kp N           &kp FSLH        &to BASE_LAYER
+                &trans &trans &trans                                      RTHUMB_REACH  LTHUMB_HOME  RTHUMB_TUCK
       >;
     };
   };
