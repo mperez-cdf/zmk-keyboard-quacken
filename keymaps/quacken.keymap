@@ -54,7 +54,7 @@
                 &trans &trans &trans                                      RTHUMB_REACH  LTHUMB_HOME  RTHUMB_TUCK
       >;
     };
-  };
+
     // 3. NumLock layer -- NavNum layer that stays on until deactivated without holding key
     num_lock_layer: num_lock_layer {
       display-name = "NumLock";
