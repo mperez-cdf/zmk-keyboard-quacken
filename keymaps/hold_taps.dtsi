@@ -231,6 +231,15 @@
       flavor = "tap-preferred";
       bindings = <&kp>, <&kp>;
     };
+    // Addition: mouse click HRM
+    mhrm: homerow_mods {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      tapping-term-ms = <TAPPING_TERM>;
+      quick-tap-ms = <QUICK_TAP>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&mkp>;
+    };
     sc: space_cadet { // same as lt, but with hold-preferred
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
