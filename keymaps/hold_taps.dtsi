@@ -250,7 +250,7 @@
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
       bindings = <&EZ_SK(LSHIFT)>, <&mo NUM_ROW_LAYER>;
-      mods      = <(MOD_LSFT|MOD_RSFT>;
+      mods      = <(MOD_LSFT|MOD_RSFT)>;
     };
     hrm: homerow_mods {
       compatible = "zmk,behavior-hold-tap";
