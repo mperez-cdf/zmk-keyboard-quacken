@@ -223,6 +223,20 @@
 };
 
 / {
+  combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <14 15 16>; // SEN
+            bindings = <&kp ESC>;
+        };
+        combo_enter {
+            timeout-ms = <50>;
+            key-positions = <19 20 21>; // RTI
+            bindings = <&kp ENTER>;
+        };
+  };
+
   behaviors {
     // Addition numrow tapdance on shift -> Sticky shift doesn't trigger if too quick :(
     /* tdsn: tap_dance_shift_numrow { */
