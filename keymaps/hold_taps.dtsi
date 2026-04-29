@@ -172,7 +172,8 @@
   #define RTHUMB_HOME   RTHUMB_TT
   #define RTHUMB_TUCK   &sym_shift_altgr
 #elifdef HT_HOME_ROW_MODS
-  #define LTHUMB_TUCK   &tdsn
+  #define LTHUMB_TUCK   &EZ_SK(LSHIFT)
+  /* #define LTHUMB_TUCK   &tdsn */
   #define LTHUMB_HOME   LTHUMB_HRM
   #define LTHUMB_REACH  &sc HRM_LAYER REACH_TAP
   #define RTHUMB_REACH  &sc HRM_LAYER ENTER
@@ -223,13 +224,13 @@
 
 / {
   behaviors {
-    // Addition numrow tapdance on shift
-    tdsn: tap_dance_shift_numrow {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&EZ_SK(LSHIFT)>, <&mo NUM_ROW_LAYER>;
-    };
+    // Addition numrow tapdance on shift -> Sticky shift doesn't trigger if too quick :(
+    /* tdsn: tap_dance_shift_numrow { */
+    /*         compatible = "zmk,behavior-tap-dance"; */
+    /*         #binding-cells = <0>; */
+    /*         tapping-term-ms = <300>; */
+    /*         bindings = <&EZ_SK(LSHIFT)>, <&mo NUM_ROW_LAYER>; */
+    /* }; */
     hrm: homerow_mods {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
