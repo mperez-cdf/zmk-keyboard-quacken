@@ -172,8 +172,8 @@
   #define RTHUMB_HOME   RTHUMB_TT
   #define RTHUMB_TUCK   &sym_shift_altgr
 #elifdef HT_HOME_ROW_MODS
-  #define LTHUMB_TUCK   &EZ_SK(LSHIFT)
-  /* #define LTHUMB_TUCK   &tdsn */
+  /* #define LTHUMB_TUCK   &EZ_SK(LSHIFT) */
+  #define LTHUMB_TUCK   &tdsn
   #define LTHUMB_HOME   LTHUMB_HRM
   #define LTHUMB_REACH  &sc HRM_LAYER REACH_TAP
   #define RTHUMB_REACH  &sc HRM_LAYER ENTER
@@ -245,6 +245,13 @@
     /*         tapping-term-ms = <300>; */
     /*         bindings = <&EZ_SK(LSHIFT)>, <&mo NUM_ROW_LAYER>; */
     /* }; */
+    // Implemented via mod-morph
+    tdsn: tap_dance_shift_numrow {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&EZ_SK(LSHIFT)>, <&mo NUM_ROW_LAYER>;
+      mods      = <(MOD_LSFT|MOD_RSFT>;
+    };
     hrm: homerow_mods {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
