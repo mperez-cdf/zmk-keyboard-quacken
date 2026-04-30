@@ -230,10 +230,30 @@
             key-positions = <14 15 16>; // SEN
             bindings = <&kp ESC>;
         };
+        combo_tab {
+            timeout-ms = <50>;
+            key-positions = <15 16>; // EN
+            bindings = <&kp TAB>;
+        };
+        combo_shift_tab {
+            timeout-ms = <50>;
+            key-positions = <14 15>; // SE
+            bindings = <&kp RS(TAB)>;
+        };
         combo_enter {
             timeout-ms = <50>;
             key-positions = <19 20 21>; // RTI
             bindings = <&kp ENTER>;
+        };
+        combo_backspace {
+            timeout-ms = <50>;
+            key-positions = <19 20>; // RT
+            bindings = <&kp BACKSPACE>;
+        };
+        combo_del {
+            timeout-ms = <50>;
+            key-positions = <20 21>; // TI
+            bindings = <&kp DEL>;
         };
   };
 
